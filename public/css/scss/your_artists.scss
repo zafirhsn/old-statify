@@ -1,0 +1,83 @@
+/* Scss Document */
+
+
+
+
+
+div.container-fluid, nav {
+			font-size: 20px;
+			font-weight: 400;
+
+}
+
+body {
+	background: #00a264;
+	background: -moz-linear-gradient(45deg, #00a264 10%, #8b00be 100%);
+	background: -webkit-linear-gradient(45deg, #00a264 10%,#8b00be 100%);
+	background: linear-gradient(45deg, #00a264 10%,#8b00be 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a264', endColorstr='#8b00be',GradientType=1 );
+/*			background-image: url("purple-green.png");*/
+	font-family: 'Roboto', sans-serif;
+}
+
+.title {
+	font-size: 50px;
+	color: #fff;
+
+}
+
+.description {
+	font-size: 30px;
+	color: #fff;
+}
+
+.container {
+	color: #fff;
+}
+
+#top-artists-long, #top-artists-med, #top-artists-short {
+	font-size: 20px;
+	color: #fff;
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.animation {
+	-webkit-animation: fadeIn 1s linear;
+	-moz-animation: fadeIn 1s linear;
+	-o-animation: fadeIn 1s linear;
+	animation: fadeIn 1s linear;
+}
+
+.nav-link:hover {
+	border-radius: 10px;
+	background-color: #5B00BA;
+	color: #fff;
+}
+
+.nav-item {
+	margin-left: 3px;
+	margin-top: 5px;
+}
+
+.active {
+	background-color: #5B00BA;
+}
+
+@media screen and (max-width: 576px) {
+	#nav {
+		background-color: #222;
+		opacity: 0.85;
+	}
+}
+		

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Your Artists</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="Keywords" content="Zafir Hasan,Zafir,Developer,Designer,Front-End Developer,UI,NYU,New York,Spotify,Statify,music,spotify,statify">
+	<meta name="author" content="=Zafir Hasan">
+	<meta name="description" content="View stats related to the artists that you listen to here">
+	<!-- Allows googles web crawler (Googlebot) to find and index my site, this is the default value, but I want to be able to see it-->
+	<meta name="robots" content="index">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+	<!--Style sheet from Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+	<!--Font awesome CSS-->
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+	<!--Base style sheet-->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+
+	<!--Page style sheet-->
+	<link href="css/your_artists.css" rel="stylesheet" type="text/css">
+	
+
+	<!--Favicon-->
+	<link rel="icon" type="image/png" href="imgs/bar-chart.png">
+   
+    <style type="text/css">
+		
+
+    </style>
+  </head>
+  <body>
+   	
+	<!--Standard bootsstrap nav-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark" id ="nav" style="background-color: #">
+      
+      <!-- Hamburger button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<!-- Hamburger icon -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+		<!--Logo/Brand link on right side of screen-->
+      <a class="navbar-brand" href="index.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Statify</a>
+
+		<!--Expanded navbar-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+         <li class="nav-item">  
+         	<a class="nav-link" href="index.html" style="padding-left: 5px; text-align: center; color: #fff">Home</a>
+         </li>
+          <li class="nav-item active" style="border-radius: 10px">
+            <a class="nav-link" href="your_artists.html" style="padding-left: 5px; text-align: center; color: #fff">Your Artists</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="your_tracks.html" style="padding-left: 5px; text-align: center; color: #fff">Your Tracks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" style="padding-left: 5px; text-align: center; color: #fff">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+    	<div class="row">
+    		<div class="col title" align="center">
+				<p id="page-heading">Your Artists</p>
+    		</div>
+    		
+    	</div>
+ <!--    	<div class="row my-5">
+			<div class="col" align="center">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control-lg" id="playlist" placeholder="Enter a playlist">
+					</div>
+				</form>
+			</div>
+		</div>  --> 	
+    </div>
+
+	<div class="container">
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Top Artists of All Time</h1>
+  					<ol id="top-artists-long">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>	
+					</ol>	
+  			</div>
+  		</div>
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Top Artists From The Last 6 Months</h1>
+  					<ol id="top-artists-med">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>	
+					</ol>	
+  			</div>
+  		</div>
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Top Artists From The Last 4 Weeks</h1>
+  					<ol id="top-artists-short">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>	
+					</ol>	
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Artists</h1>
+  					<ul id="average-pop-long">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>							
+					</ul>	
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Artists From The Last 6 Months</h1>
+  					<ul id="average-pop-med">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>						
+					</ul>	
+  			</div>
+  		</div>
+   		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Artists From The Last 4 Weeks</h1>
+  					<ul id="average-pop-short">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>							
+					</ul>	
+  			</div>
+  		</div>
+	</div>
+
+    <script id="top-artists-template" type="text/x-handlebars">
+		<li>{{items.0.name}}</li>
+		<li>{{items.1.name}}</li>
+		<li>{{items.2.name}}</li>
+		<li>{{items.3.name}}</li>
+		<li>{{items.4.name}}</li>
+		<li>{{items.5.name}}</li>
+		<li>{{items.6.name}}</li>
+		<li>{{items.7.name}}</li>
+		<li>{{items.8.name}}</li>
+		<li>{{items.9.name}}</li>   		
+    </script>
+
+	<script id="pop-template" type="text/x-handlebars">
+		<p style="font-size: 50px">{{avgpop}}</p>  
+	</script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/data.js"></script>
+
+    <script>
+//		(function() { 
+		$(document).ready(function() {
+			//Get the access token
+			var access_token = sessionStorage.getItem('access_token');
+			
+			//Get inner html of templates
+			var topArtists = $("#top-artists-template").html();
+			var avgPop = $("#pop-template").html();
+			
+			//Compile templates
+			var artistTemplate = Handlebars.compile(topArtists);
+			var popTemplate = Handlebars.compile(avgPop);
+			
+			//ID of new templates to be filled
+			var artistsLongID = "#top-artists-long";
+			var artistsMedID = "#top-artists-med";
+			var artistsShortID = "#top-artists-short";
+			
+			var popLongID = "#average-pop-long";
+			var popMedID = "#average-pop-med";
+			var popShortID = "#average-pop-short";
+			
+			
+			var aLongRes = {};
+			var aMedRes = {};
+			var aShortRes = {};
+			
+			//Fills in Top Artists Template and stores response in sessionStorage
+			if (sessionStorage.getItem("topArtistsLong") == null || sessionStorage.getItem("topArtistsLong") == undefined) {
+				console.log("sessionStorage is empty, so we have to make new requests");
+				
+				sessionStorage.setItem("topArtistsLong", JSON.stringify(getTopArtistsLong(access_token, artistTemplate, artistsLongID)));
+				
+				sessionStorage.setItem("topArtistsMed", JSON.stringify(getTopArtistsMed(access_token, artistTemplate, artistsMedID)));
+				
+				sessionStorage.setItem("topArtistsShort", JSON.stringify(getTopArtistsShort(access_token, artistTemplate, artistsShortID)));
+				
+				aLongRes = JSON.parse(sessionStorage.getItem("topArtistsLong"));
+				aMedRes = JSON.parse(sessionStorage.getItem("topArtistsMed"));
+				aShortRes = JSON.parse(sessionStorage.getItem("topArtistsShort"));
+				
+				$("#top-artists-long").hide().slideDown();
+				$("#top-artists-med").hide().slideDown();
+				$("#top-artists-short").hide().slideDown();
+
+			}
+			else {
+				console.log("sessionStorage is not empty, so we don't have to make new requests");			
+				
+				aLongRes = JSON.parse(sessionStorage.getItem("topArtistsLong"));
+				aMedRes = JSON.parse(sessionStorage.getItem("topArtistsMed"));
+				aShortRes = JSON.parse(sessionStorage.getItem("topArtistsShort"));
+				
+				$(artistsLongID).html(artistTemplate(aLongRes));
+				$(artistsMedID).html(artistTemplate(aMedRes));
+				$(artistsShortID).html(artistTemplate(aShortRes));
+				
+				$("#top-artists-long").hide().slideDown();
+				$("#top-artists-med").hide().slideDown();
+				$("#top-artists-short").hide().slideDown();
+			}
+			
+			var avgPop = 0;
+			for(var i = 0; i < aLongRes.items.length; i++) {
+				console.log(aLongRes.items[i].popularity);
+				avgPop += aLongRes.items[i].popularity;
+			}
+			avgPop = avgPop / aLongRes.items.length;
+			var popLongRes = {avgpop: avgPop};
+			$(popLongID).html(popTemplate(popLongRes));
+			
+			avgPop = 0;
+			for(var i = 0; i < aMedRes.items.length; i++) {
+				console.log(aMedRes.items[i].popularity);
+				avgPop += aMedRes.items[i].popularity;
+			}
+			avgPop = avgPop / aMedRes.items.length;
+			var popMedRes = {avgpop: avgPop};
+			$(popMedID).html(popTemplate(popMedRes));
+			
+			avgPop = 0;
+			for(var i = 0; i < aShortRes.items.length; i++) {
+				console.log(aShortRes.items[i].popularity);
+				avgPop += aShortRes.items[i].popularity;
+			}
+			avgPop = avgPop / aShortRes.items.length;
+			var popShortRes = {avgpop: avgPop};
+			$(popShortID).html(popTemplate(popShortRes));
+			
+			
+
+			
+		});
+		
+//		})();
+		
+	  
+	</script>
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    <footer>
+    	<div class="container">
+			<div class="row justify-content-center py-2">
+				<div class = "col top-row"> 
+					<a href="index.html" class="footer-link">Home</a>
+				</div>
+				<div class="col top-row"> 
+					<a href="your_artists.html" class="footer-link">Your Artists</a>
+				</div>
+				<div class="col top-row">
+					<a href="your_tracks.html" class="footer-link">Your Tracks</a>
+				</div>
+				<div class="col top-row">
+					<a href="contact.html" class="footer-link">Contact</a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2">
+				<div class="col-auto">
+					<a href="https://github.com/zafirhsn"><i class="fab fa-github fa-2x fa-fw logo-img"></i></a>
+					
+				</div>
+				<div class="col-auto">
+					<a href="https://www.linkedin.com/in/zafir-hasan-875376144/"><i class="fab fa-linkedin fa-2x fa-fw logo-img"></i></a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2 bottom-row">
+				<div class="col-auto">
+					<span class="footer-text">&copy; Copyright 2018. All rights reserved.</span>
+				</div>
+				<div class="col-auto"> 
+					<a href="#" class="footer-link footer-text">Sitemap</a>
+				</div>
+				<div class="col-auto">
+					<span class="footer-text">Contact me: zh754@nyu.edu</span>
+				</div>			
+			</div>
+			
+		</div>
+    	
+    </footer>
+    
+    
+  </body>
+</html>

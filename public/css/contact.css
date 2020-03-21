@@ -1,0 +1,81 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+
+@media screen and (max-height: 775px) {
+  html {
+    height: auto;
+  }
+}
+div.container-fluid, nav {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+body {
+  background: #5b00ba;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#5b00ba", endColorstr="#c57e14",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+.title {
+  font-size: 50px;
+  color: #fff;
+}
+
+.description {
+  font-size: 30px;
+  color: #fff;
+}
+
+/*
+.github, .gmail, .twitter {
+	display: block;
+	background-size: 100%;
+	height: 50px;
+	width: 50px;
+	opacity: 0.7;
+
+}
+*/
+.github:hover, .gmail:hover, .twitter:hover {
+  opacity: 1;
+}
+
+img {
+  height: 100px;
+}
+
+.nav-link:hover {
+  border-radius: 10px;
+  background-color: #5B00BA;
+  color: #fff;
+}
+
+.nav-item {
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.active {
+  background-color: #5B00BA;
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    background-color: #222;
+    opacity: 0.85;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Statify | Your Music in Numbers</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="Keywords" content="Zafir Hasan,Zafir,Developer,Designer,Front-End Developer,UI,NYU,New York,Spotify,Statify,music,spotify,statify,data,visualization,">
+		<meta name="author" content="=Zafir Hasan">
+		<meta name="description" content="View all your Spotify listening statistics in one site and compare with friends">
+
+		<!--Style sheet from Google Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+		
+		<!--Font awesome CSS-->
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		
+		<!--Base style sheet-->
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+
+		<!--Page style sheet-->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    
+		<!--Favicon-->
+		<link rel="icon" type="image/png" href="imgs/bar-chart.png">
+    
+  </head>
+  
+  <body>
+
+		
+
+    <div class="container" id="login">
+      <div class="row">
+      	<div class="col home-title" align="center">
+      		<i class="fa fa-bar-chart" aria-hidden="true"></i>
+			<p>Statify</p>
+		</div>
+
+	  </div>
+     
+      <div class="row">
+      	<div class="col home-descrip" align="center">
+       		<p>This site uses Spotify's web API to give users a glance at their listening habits and statistics<br><br> 
+       		Connect your Spotify Account to</p>
+		</div>
+	  </div> 
+      <div class="row">
+      	<div class="col home-list">	   
+			<ul> 
+				<li>Check out your top tracks and artists from the last 4 weeks, 6 months, or of all time</li>
+				<li>Find out which of your songs are happier, easier to dance to, have more energy, are more instrumental or vocal and more</li>
+				<li>Find the average popularity of the artists in your library and see how obscure your music tastes are</li>
+				<li>Put in the name of a playlist you own
+					<ul>
+						<li>Danceabilty</li>
+						<li>Valence</li>
+						<li>Tempo</li>
+						<li>And more...</li>	
+       		   				</ul>	
+       		   			</li>	
+       		   		</ul>
+	  	</div>
+	  </div>
+       
+       <div class="row">
+       	<div class ="col" align="center">
+       		<br>
+       		<br>
+        	<button type="button" id="login-button" class="btn btn-success btn-lg" data-target="button">Connect to Spotify</button>
+        	<br>
+        	<br>
+        	<br>	
+	  	</div>
+	   </div>
+	  </div>
+	  
+	<div class="container animation" id="loggedin" align="center">
+  
+  
+    </div>
+	  
+    <script id="welcome-template" type="text/x-handlebars">
+		<div class="row">
+			<div class="col" id="welcome" align="center">
+				<p>Welcome, {{display_name}}</p>
+			</div>
+		</div>
+      	
+		<div class="row">
+			<div class="col">
+				<img id="pic" src="#" class="rounded-circle">
+			</div>
+		</div>
+      
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+    <script>
+      $(document).ready(function() {
+        console.log("In beginning of function");
+
+			$("html").css("height", "auto");
+		  
+        var stateKey = 'spotify_auth_state';
+
+        /**
+         * Obtains parameters from the hash of the URL
+         * @return Object
+         */
+        function getHashParams() {
+          var hashParams = {};
+          var e, r = /([^&;=]+)=?([^&;]*)/g,
+              q = window.location.hash.substring(1);
+          while ( e = r.exec(q)) {
+             hashParams[e[1]] = decodeURIComponent(e[2]);
+          }
+          return hashParams;
+        }
+
+        /**
+         * Generates a random string containing numbers and letters
+         * @param  {number} length The length of the string
+         * @return {string} The generated string
+         */
+        function generateRandomString(length) {
+          var text = '';
+          var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+          for (var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+          }
+          return text;
+        };
+
+        console.log("Printing random string for state parameter");
+        console.log(generateRandomString(10));
+
+        console.log("PRINTING hash params");
+        //JSON
+        var params = getHashParams();
+        console.log(params);
+
+        var access_token = params.access_token,
+            state = params.state,
+            storedState = localStorage.getItem(stateKey);
+		  
+        console.log("PRINTING localStorage");
+        console.log(localStorage.getItem(stateKey));
+		  
+		console.log("PRINTING sessionStorage");
+		console.log(sessionStorage.getItem("access_token"));	  
+		  
+		console.log("PRINTING sessionStorage null test");
+		if (sessionStorage.getItem("access_token") == 'undefined' || sessionStorage.getItem("access_token") == null) {
+		  
+			console.log("True, sessionStorage is undefined");	
+
+
+      var redirecturi = 'http://www.zafirhasan.com/statify';
+			var testuri = 'http://localhost:5500/public'    
+			document.getElementById('login-button').addEventListener('click', function() {
+            var client_id = 'd4557495633b429a85292698a89e5978'; // Your client id
+            var redirect_uri = testuri // Your redirect uri
+            var state = generateRandomString(16);
+            localStorage.setItem(stateKey, state);	//set the stateKey as the random string state
+            var scope = 'user-read-private user-read-email user-read-birthdate user-top-read user-library-read user-read-recently-played';
+            var url = 'https://accounts.spotify.com/authorize';
+            url += '?response_type=token';
+            url += '&client_id=' + encodeURIComponent(client_id);
+            url += '&scope=' + encodeURIComponent(scope);
+            url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+            url += '&state=' + encodeURIComponent(state);
+            window.location = url;
+            }, false);
+			
+			var params = getHashParams();
+			var access_token = params.access_token,
+            	state = params.state,
+            	storedState = localStorage.getItem(stateKey);
+			
+			console.log("PRINTING sessionStorage inside of if statement")
+			sessionStorage.setItem("access_token", access_token);
+			console.log(sessionStorage.getItem("access_token"));
+			
+			if (access_token && (state == null || state !== storedState)) {
+          		alert('There was an error during the authentication');	
+        	} 
+			
+			else {
+				localStorage.removeItem(stateKey);
+				if (access_token) {
+			  		var welcome_template = $("#welcome-template").html();
+            		var compiledWelcomeTemplate = Handlebars.compile(welcome_template);
+
+				   $.ajax({
+					   url: 'https://api.spotify.com/v1/me',
+					   headers: {
+						   'Authorization': 'Bearer ' + access_token
+					   },
+					   success: function(response) {
+						 console.log("PRINTING response from Profile");
+						 console.log(response);
+						 console.log(response.country);
+						 $("#loggedin").html(compiledWelcomeTemplate(response));
+						 $("#pic").attr("src", response.images[0].url);
+						 $("html").css("height", "100%");
+						 $('#loggedin').show();
+						 $('#login').hide();
+						 console.log("AFTER template done");
+						 $('footer').toggleClass("footer-position", () => {
+					 		console.log("Setting footer position");
+					 		return true;
+				 		});
+						 }
+						 
+				   });							
+			  	}
+				else {
+					$('#login').show();
+					$('#loggedin').hide(); 
+							
+				}
+			}
+								
+		}
+		  
+		else {
+		  var access_token = sessionStorage.getItem("access_token");
+		  var welcome_template = $("#welcome-template").html();
+		  var compiledWelcomeTemplate = Handlebars.compile(welcome_template);
+	      $("html").css("height", "100%");
+		  $.ajax({
+			 url: 'https://api.spotify.com/v1/me',
+			 headers: {
+				 'Authorization': 'Bearer ' + access_token
+			 },
+			 success: function(response) {
+			   console.log("PRINTING response from Profile after coming from a different page");
+			   console.log(response);
+				 console.log(response.display_name);
+			   $('#loggedin').html(compiledWelcomeTemplate(response));
+			   $("#pic").attr("src", response.images[0].url);
+			   
+			   $('#loggedin').show();
+				 $('#login').hide();
+				 $('footer').toggleClass("footer-position", () => {
+					 console.log("Setting footer position");
+					 return true;
+				 });
+			 }
+		 });
+		}
+		  
+	  });
+	
+//		})();
+    
+	  </script>
+	
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    
+    <footer>
+    	<div class="container">
+			<div class="row justify-content-center py-2">
+				<div class = "col top-row"> 
+					<a href="index.html" class="footer-link">Home</a>
+				</div>
+				<div class="col top-row"> 
+					<a href="your_artists.html" class="footer-link">Your Artists</a>
+				</div>
+				<div class="col top-row">
+					<a href="your_tracks.html" class="footer-link">Your Tracks</a>
+				</div>
+				<div class="col top-row">
+					<a href="contact.html" class="footer-link">Contact</a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2">
+				<div class="col-auto">
+					<a href="https://github.com/zafirhsn"><i class="fab fa-github fa-2x fa-fw logo-img"></i></a>
+					
+				</div>
+				<div class="col-auto">
+					<a href="https://www.linkedin.com/in/zafir-hasan-875376144/"><i class="fab fa-linkedin fa-2x fa-fw logo-img"></i></a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2 bottom-row">
+				<div class="col-auto">
+					<span class="footer-text">&copy; Copyright 2018. All rights reserved.</span>
+				</div>
+				<div class="col-auto"> 
+					<a href="#" class="footer-link footer-text">Sitemap</a>
+				</div>
+				<div class="col-auto">
+					<span class="footer-text">Contact me: zh754@nyu.edu</span>
+				</div>			
+			</div>
+			
+		</div>
+    	
+    </footer>
+    
+  </body>
+</html>

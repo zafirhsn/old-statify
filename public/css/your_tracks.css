@@ -1,0 +1,87 @@
+/* Scss Document */
+div.container-fluid, nav {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+body {
+  background: #5b00ba;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #0069ba 0%, #c61464 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #0069ba 0%, #c61464 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #0069ba 0%, #c61464 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#0069ba", endColorstr="#c61464",GradientType=1 );
+  /* IE6-9 */
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  font-size: 50px;
+  color: #fff;
+}
+
+.description {
+  font-size: 30px;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+}
+
+#top-tracks-long, #top-tracks-med, #top-tracks-short, #top-artists-long {
+  font-size: 20px;
+  color: #fff;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation {
+  -webkit-animation: fadeIn 1s linear;
+  -moz-animation: fadeIn 1s linear;
+  -o-animation: fadeIn 1s linear;
+  animation: fadeIn 1s linear;
+}
+
+.nav-link:hover {
+  border-radius: 10px;
+  background-color: #5B00BA;
+  color: #fff;
+}
+
+.nav-link:hover {
+  border-radius: 10px;
+  background-color: #5B00BA;
+  color: #fff;
+}
+
+.nav-item {
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.active {
+  background-color: #5B00BA;
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    background-color: #222;
+    opacity: 0.85;
+  }
+}
+
+/*# sourceMappingURL=your_tracks.css.map */

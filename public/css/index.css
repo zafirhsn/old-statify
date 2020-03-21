@@ -1,0 +1,116 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+@media screen and (max-height: 775px) {
+  html {
+    height: auto;
+  }
+}
+
+div.container-fluid, nav {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+body {
+  /*background-color: #000000;*/
+  /*#5B00BA*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b00ba+0,c57e14+100 */
+  background: #5b00ba;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #5b00ba 0%, #c57e14 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#5b00ba", endColorstr="#c57e14",GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+li.nav-item:hover {
+  /*background-color: #FFF !important;*/
+}
+
+.nav-link:hover {
+  /*			color:#5B00BA !important;*/
+}
+
+.home-title {
+  font-size: 70px;
+  margin-top: 5%;
+}
+
+.home-descrip {
+  font-size: 40px;
+}
+
+.home-list {
+  font-size: 20px;
+}
+
+#loggedin {
+  font-size: 70px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation {
+  -webkit-animation: fadeIn 1.5s linear;
+  -moz-animation: fadeIn 1.5s linear;
+  -o-animation: fadeIn 1.5s linear;
+  animation: fadeIn 1.5s linear;
+}
+
+#login-button {
+  border-radius: 30px;
+}
+
+#login {
+  display: none;
+}
+
+@media screen and (max-width: 600) {
+  .btn {
+    width: 100%;
+  }
+}
+.btn {
+  width: 60%;
+}
+
+.nav-link:hover {
+  border-radius: 10px;
+  background-color: #5B00BA;
+  color: #fff;
+}
+
+.nav-item {
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.active {
+  background-color: #5B00BA;
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    background-color: #222;
+    opacity: 0.85;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

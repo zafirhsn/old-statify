@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Contact</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="Keywords" content="Zafir Hasan,Zafir,Developer,Designer,Front-End Developer,UI,NYU,New York,Spotify,Statify,music,spotify,statify">
+	<meta name="author" content="=Zafir Hasan">
+	<meta name="description" content="Contact me about this project using this form or email me at zh754@nyu.edu">
+	<!-- Allows googles web crawler (Googlebot) to find and index my site, this is the default value, but I want to be able to see it-->
+	<meta name="robots" content="index">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <!--Style sheet from Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    
+	<!--Font Awesome CSS-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
+	<!--Base style sheet-->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+
+	<!--Page style sheet-->
+	<link href="css/contact.css" rel="stylesheet" type="text/css">
+	
+	<!--Favicon-->
+	<link rel="icon" type="image/png" href="imgs/bar-chart.png">
+   	
+    <style type="text/css">
+
+
+    </style>
+  </head>
+  <body>
+	
+  	
+	<!--Standard bootsstrap nav-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark" id ="nav" style="background-color: #">
+      
+      <!-- Hamburger button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<!-- Hamburger icon -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+		<!--Logo/Brand link on right side of screen-->
+      <a class="navbar-brand" href="index.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Statify</a>
+
+		<!--Expanded navbar-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+         <li class="nav-item">  
+         	<a class="nav-link" href="index.html" style="padding-left: 5px; text-align: center; color: #fff">Home</a>
+         </li>
+          <li class="nav-item">
+            <a class="nav-link" href="your_artists.html" style="padding-left: 5px; text-align: center; color: #fff">Your Artists</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="your_tracks.html" style="padding-left: 5px; text-align: center; color: #fff">Your Tracks</a>
+          </li>
+          <li class="nav-item active" style="border-radius: 10px">
+            <a class="nav-link" href="contact.html" style="padding-left: 5px; text-align: center; color: #fff">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container">
+    	<div class="row mb-5">
+    		<div class="col title" align="center">
+    			<p id="page-heading">Contact</p>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md">
+				<form>
+					<div class="form-row">
+						<div class="col">
+							<div class="form-group">
+								<label for="first_name">First Name</label>
+								<input type="text" class="form-control" id="first_name" placeholder="First Name">
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label for="last_name">Last Name</label>
+								<input type="text" class="form-control" id="last_name" placeholder="Last Name">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label for="message">Message</label>
+								<textarea class="form-control" id="message" rows="15" placeholder="Send me some feedback"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-md-3 col-lg-2">
+							<button type="submit" class="btn btn-primary">Send</button>
+						</div>
+						<div class="col-sm-4 col-md-3 col-lg-2">
+							<a class="github" href="https://github.com/zafirhsn"><i class="fab fa-github fa-3x fa-fw logo-img" aria-hidden="true"></i></a>
+						</div>
+						<div class="col-sm-4 col-md-3 col-lg-2">
+							<a class="gmail" href="#"><i class="fab fa-linkedin fa-3x fa-fw logo-img" aria-hidden="true"></i></a>
+						</div>
+						<div class="col-sm-4 col-md-3 col-lg-2">
+							<a class="twitter" href="#" style="background-image: url(twitter.png);"></a>
+						</div>
+					</div>
+				</form>
+    		</div>
+    	</div>
+    	
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+		$(document).ready(function() {
+			// $("#page-heading").hide().slideDown();		  
+		
+						  
+		});
+		
+	  
+	</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    <footer>
+    	<div class="container">
+			<div class="row justify-content-center py-2">
+				<div class = "col top-row"> 
+					<a href="index.html" class="footer-link">Home</a>
+				</div>
+				<div class="col top-row"> 
+					<a href="your_artists.html" class="footer-link">Your Artists</a>
+				</div>
+				<div class="col top-row">
+					<a href="your_tracks.html" class="footer-link">Your Tracks</a>
+				</div>
+				<div class="col top-row">
+					<a href="contact.html" class="footer-link">Contact</a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2">
+				<div class="col-auto">
+					<a href="https://github.com/zafirhsn"><i class="fab fa-github fa-2x fa-fw logo-img"></i></a>
+					
+				</div>
+				<div class="col-auto">
+					<a href="https://www.linkedin.com/in/zafir-hasan-875376144/"><i class="fab fa-linkedin fa-2x fa-fw logo-img"></i></a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2 bottom-row">
+				<div class="col-auto">
+					<span class="footer-text">&copy; Copyright 2018. All rights reserved.</span>
+				</div>
+				<div class="col-auto"> 
+					<a href="#" class="footer-link footer-text">Sitemap</a>
+				</div>
+				<div class="col-auto">
+					<span class="footer-text">Contact me: zh754@nyu.edu</span>
+				</div>			
+			</div>
+			
+		</div>
+    	
+    </footer>    
+    
+  </body>
+</html>

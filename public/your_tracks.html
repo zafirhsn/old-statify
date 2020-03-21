@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Your Charts</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="Keywords" content="Zafir Hasan,Zafir,Developer,Designer,Front-End Developer,UI,NYU,New York,Spotify,Statify,music,spotify,statify">
+	<meta name="author" content="=Zafir Hasan">
+	<meta name="description" content="View stats related to the artists that you listen to here">
+	<!-- Allows googles web crawler (Googlebot) to find and index my site, this is the default value, but I want to be able to see it-->
+	<meta name="robots" content="index">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <!--Style sheet from Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    
+	<!--Font Awesome CSS-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
+	<!--Base style sheet-->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+
+	<!--Page style sheet-->
+	<link href="css/your_tracks.css" rel="stylesheet" type="text/css">
+	
+	<!--Favicon-->
+	<link rel="icon" type="image/png" href="imgs/bar-chart.png">
+   
+   
+    <style type="text/css">
+		
+		
+    </style>
+  </head>
+  <body>
+  	
+	<!--Standard bootsstrap nav-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-dark" id ="nav" style="background-color: #">
+      
+      <!-- Hamburger button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<!-- Hamburger icon -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+		<!--Logo/Brand link on right side of screen-->
+      <a class="navbar-brand" href="index.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Statify</a>
+
+		<!--Expanded navbar-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+         <li class="nav-item">  
+         	<a class="nav-link" href="index.html" style="padding-left: 5px; text-align: center; color: #fff">Home</a>
+         </li>
+          <li class="nav-item">
+            <a class="nav-link" href="your_artists.html" style="padding-left: 5px; text-align: center; color: #fff">Your Artists</a> 
+          </li>
+          <li class="nav-item active" style="border-radius: 10px">
+            <a class="nav-link" href="your_tracks.html" style="padding-left: 5px; text-align: center; color: #fff">Your Tracks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" style="padding-left: 5px; text-align: center; color: #fff">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+	<div class="container">
+	<div class="row" align="center">
+		<div class="col title" align="center">
+			<p>Your Charts</p>
+		</div>
+
+	</div>	
+	</div>
+  	
+  	<div class="container">
+  		<div class="row">
+				<div class="col mt-5 text-center">
+						<h1>Top Tracks of All Time</h1>
+				</div>
+				<div class="w-100"></div>
+
+  			<!-- <div class="col mt-5"> -->	
+					<div id="top-tracks-long" class="col">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</div>
+				<!-- </div> -->
+				
+			</div>
+			
+  		<div class="row">
+  			<div class="col mt-5 text-center">
+					<h1>Top Tracks From the Last 6 Months</h1>
+				</div>
+				<div class="w-100"></div>
+				<div id="top-tracks-med" class="col">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
+			</div>
+			
+  		<div class="row">
+  			<div class="col mt-5 text-center">
+					<h1>Top Tracks From the Last Month</h1>
+				</div>
+				<div class="w-100"></div>
+  			<div id="top-tracks-short" class="col">
+					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+				</div>	
+			</div>
+			
+  		<div class="row mt-5">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Tracks</h1>
+  					<ul id="average-pop-long">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Tracks From The Last 6 Months</h1>
+  					<ul id="average-pop-med">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+   		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Tracks From The Last Month</h1>
+  					<ul id="average-pop-short">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Danceability of Your Top Tracks</h1>
+  					<ul id="danceable-long">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>							
+					</ul>	
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Danceability of Your Top Tracks From the Last 6 Months</h1>
+  					<ul id="danceable-med">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Danceability of Your Top Tracks From the Last Month</h1>
+  					<ul id="danceable-short">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Happiness of Your Top Tracks</h1>
+  					<ul id="valence-long">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Happiness of Your Top Tracks From The Last 6 Months</h1>
+  					<ul id="valence-med">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>					
+					</ul>	
+  			</div>
+  		</div>
+ 		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Happiness of Your Top Tracks From The Last Month</h1>
+  					<ul id="valence-short">
+						<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>							
+					</ul>	
+  			</div>
+  		</div>
+
+<!--  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Top Artists of All Time</h1>
+  					<ul id="top-artists-long" class="animation">
+
+					</ul>	
+  			</div>
+  		</div> -->
+ <!--  		<div class="row">
+  			<div class="col">
+  				<br>
+  				<h1>Average Popularity of your Top Artists</h1>
+  					<ul id="average-pop" class="animation">
+						
+					</ul>	
+  			</div> -->
+  		</div>
+  		
+
+		<script id="top-tracks-template" type="text/x-handlebars">
+		
+		<div class ="row">
+			<div class="col">
+				<img src={{items.[0].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">1. {{items.0.name}} by {{items.0.artists.0.name}}</p>
+			</div>
+			<div class="col">
+				<img src={{items.[1].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">2. {{items.1.name}} by {{items.1.artists.0.name}}</p>
+			</div>
+		</div>
+
+	
+		<div class="row">
+			<div class ="col">
+				<img src={{items.[2].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">3. {{items.2.name}} by {{items.2.artists.0.name}}</p>
+			</div>
+			<div class="col">
+				<img src={{items.[3].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">4. {{items.3.name}} by {{items.3.artists.0.name}}</p>
+			</div>
+		</div>
+	
+		<div class="row"> 
+			<div class="col">
+				<img src={{items.[4].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">5. {{items.4.name}} by {{items.4.artists.0.name}}</p>
+			</div>
+			<div class="col">
+				<img src={{items.[5].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">6. {{items.5.name}} by {{items.5.artists.0.name}}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<img src={{items.[6].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">7. {{items.6.name}} by {{items.6.artists.0.name}}</p>
+			</div>
+			<div class="col">
+				<img src={{items.[7].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">8. {{items.7.name}} by {{items.7.artists.0.name}}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<img src={{items.[8].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">9. {{items.8.name}} by {{items.8.artists.0.name}}</p>
+			</div>
+			<div class="col">
+				<img src={{items.[9].album.images.[1].url}} class="rounded-circle mt-4" height="80px"><p style="display: inline" class="ml-4">10. {{items.9.name}} by {{items.9.artists.0.name}}</p>   
+			</div>
+		</div>
+
+    </script>
+    
+    <script id="pop-template" type="text/x-handlebars">
+		<p style="font-size: 50px">{{avgpop}}</p>  
+	</script>
+	
+	<script id="danceability-template" type="text/x-handlebars">
+		<p style="font-size: 50px">{{danceability}}</p>  
+	</script>
+		
+	<script id="valence-template" type="text/x-handlebars">
+		<p style="font-size: 50px">{{valence}}</p>  
+	</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+		
+//		(function() {
+		$(document).ready(function() {
+			
+			//Get the access token
+			var access_token = sessionStorage.getItem('access_token');
+			
+			//Get inner html of templates
+			var topTracks = $("#top-tracks-template").html();	
+			var avgPopTemplate = $("#pop-template").html();
+			var dance = $("#danceability-template").html();
+			var val = $("#valence-template").html();
+
+			//Compile templates
+			var tracksTemplate = Handlebars.compile(topTracks);
+			var popTemplate = Handlebars.compile(avgPopTemplate);
+			var danceTemplate = Handlebars.compile(dance);
+			var valenceTemplate = Handlebars.compile(val);
+			
+			//ID of new templates to be filled
+			var tracksLongID = "#top-tracks-long";
+			var tracksMedID = "#top-tracks-med";
+			var tracksShortID = "#top-tracks-short";
+			
+			var popLongID = "#average-pop-long";
+			var popMedID = "#average-pop-med";
+			var popShortID = "#average-pop-short";
+			
+			var danceLongID = "#danceable-long";
+			var danceMedID = "#danceable-med";
+			var danceShortID = "#danceable-short";
+			
+			var valLongID = "#valence-long";
+			var valMedID = "#valence-med";
+			var valShortID = "#valence-short";
+			
+			var tLongRes = {};
+			var tMedRes = {};
+			var tShortRes = {};
+			
+			if (sessionStorage.getItem("topTracksLong") == null || sessionStorage.getItem("topTracksLong") == undefined) {
+				console.log("session storage is empty so we have to make new requests");
+				
+				sessionStorage.setItem("topTracksLong", JSON.stringify(getTopTracksLong(access_token, tracksTemplate, tracksLongID)));
+				
+				sessionStorage.setItem("topTracksMed", JSON.stringify(getTopTracksMed(access_token, tracksTemplate, tracksMedID)));
+					
+				sessionStorage.setItem("topTracksShort", JSON.stringify(getTopTracksShort(access_token, tracksTemplate, tracksShortID)));
+				
+				tLongRes = JSON.parse(sessionStorage.getItem("topTracksLong"));
+				tMedRes = JSON.parse(sessionStorage.getItem("topTracksMed"));
+				tShortRes = JSON.parse(sessionStorage.getItem("topTracksShort"));
+				
+				$(popLongID).html(popTemplate(tLongRes));
+				$(danceLongID).html(danceTemplate(tLongRes));
+				$(valLongID).html(valenceTemplate(tLongRes));
+				
+				
+				$(popMedID).html(popTemplate(tMedRes));
+				$(danceMedID).html(danceTemplate(tMedRes));
+				$(valMedID).html(valenceTemplate(tMedRes));
+				
+				$(popShortID).html(popTemplate(tShortRes));
+				$(danceShortID).html(danceTemplate(tShortRes));
+				$(valShortID).html(valenceTemplate(tShortRes));
+				
+				$(tracksLongID).hide().slideDown(800);
+				$(tracksMedID).hide().slideDown();
+				$(tracksShortID).hide().slideDown();
+				$(danceLongID).hide().slideDown();
+				$(danceMedID).hide().slideDown();
+				$(danceShortID).hide().slideDown();
+				$(popLongID).hide().slideDown();
+				$(popMedID).hide().slideDown();
+				$(popShortID).hide().slideDown();
+				$(valLongID).hide().slideDown();
+				$(valMedID).hide().slideDown();
+				$(valShortID).hide().slideDown();
+				
+				var after = new Date("December 10, 2017 11:13:00").getTime();
+				getRecentTracks(access_token, after);
+				
+			}
+			else {
+				console.log("Session storage is not empty so we won't make more requests");
+				
+				tLongRes = JSON.parse(sessionStorage.getItem("topTracksLong"));
+				tMedRes = JSON.parse(sessionStorage.getItem("topTracksMed"));
+				tShortRes = JSON.parse(sessionStorage.getItem("topTracksShort"));
+				
+				$(tracksLongID).html(tracksTemplate(tLongRes));
+				$(tracksMedID).html(tracksTemplate(tMedRes));
+				$(tracksShortID).html(tracksTemplate(tShortRes));
+				
+				$(popLongID).html(popTemplate(tLongRes));
+				$(danceLongID).html(danceTemplate(tLongRes));
+				$(valLongID).html(valenceTemplate(tLongRes));
+				
+				$(popMedID).html(popTemplate(tMedRes));
+				$(danceMedID).html(danceTemplate(tMedRes));
+				$(valMedID).html(valenceTemplate(tMedRes));
+				
+				$(popShortID).html(popTemplate(tShortRes));
+				$(danceShortID).html(danceTemplate(tShortRes));
+				$(valShortID).html(valenceTemplate(tShortRes));
+				
+				$(tracksLongID).hide().slideDown(600);
+				$(tracksMedID).hide().slideDown(600);
+				$(tracksShortID).hide().slideDown(600);
+				$(danceLongID).hide().slideDown(600);
+				$(danceMedID).hide().slideDown(600);
+				$(danceShortID).hide().slideDown();
+				$(popLongID).hide().slideDown();
+				$(popMedID).hide().slideDown();
+				$(popShortID).hide().slideDown();
+				$(valLongID).hide().slideDown();
+				$(valMedID).hide().slideDown();
+				$(valShortID).hide().slideDown();
+				
+				var after = new Date("December 10, 2017 11:13:00").getTime();
+				//getRecentTracks(access_token, after);
+			}
+
+
+
+
+			
+			
+		});
+		
+//		})();
+			
+			
+	</script>
+ 
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    
+    <footer>
+    	<div class="container">
+			<div class="row justify-content-center py-2">
+				<div class = "col top-row"> 
+					<a href="index.html" class="footer-link">Home</a>
+				</div>
+				<div class="col top-row"> 
+					<a href="your_artists.html" class="footer-link">Your Artists</a>
+				</div>
+				<div class="col top-row">
+					<a href="your_tracks.html" class="footer-link">Your Tracks</a>
+				</div>
+				<div class="col top-row">
+					<a href="contact.html" class="footer-link">Contact</a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2">
+				<div class="col-auto">
+					<a href="https://github.com/zafirhsn"><i class="fab fa-github fa-2x fa-fw logo-img"></i></a>
+					
+				</div>
+				<div class="col-auto">
+					<a href="https://www.linkedin.com/in/zafir-hasan-875376144/"><i class="fab fa-linkedin fa-2x fa-fw logo-img"></i></a>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center py-2 bottom-row">
+				<div class="col-auto">
+					<span class="footer-text">&copy; Copyright 2018. All rights reserved.</span>
+				</div>
+				<div class="col-auto"> 
+					<a href="#" class="footer-link footer-text">Sitemap</a>
+				</div>
+				<div class="col-auto">
+					<span class="footer-text">Contact me: zh754@nyu.edu</span>
+				</div>			
+			</div>
+			
+		</div>
+    	
+    </footer>
+   
+  </body>
+</html>

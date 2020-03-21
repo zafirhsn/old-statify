@@ -1,0 +1,75 @@
+/* Scss Document */
+/*Main stylings for all pages*/
+
+/*Color variables*/
+$base-color: #5b00ba;
+$base-light-10: #7D00FD;
+$base-light-20: #8511FC;
+$base-dark-10: #490093;
+$base-dark-20: #380072;
+
+$orange: #c57e14;
+$green: #00a264;
+$purple-pink: #5b00ba;
+$blue: #0069ba;
+$red-pink: #c61464;
+
+/*Font stack*/
+$base-sans-serif: 'Roboto', sans-serif;
+
+
+/*Footer styling*/
+
+@media screen and (min-width: 540px) {
+	.bottom-row {
+		margin-left: -70px;
+	}
+	
+}
+
+.footer-position {
+	position: fixed;
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin-top: 5%;
+	padding-top: 10px;
+	background-color: $base-dark-20;
+}
+
+.top-row {
+	text-align: center;
+}
+
+.footer-link {
+	font-family: $base-sans-serif;
+	color: #FFF;
+	
+	&:hover {
+		text-decoration: none;
+		color: white;		
+	}
+}
+
+.footer-text {
+	font-size: 12px;
+	color: #FFF;
+	font-family: $base-sans-serif;
+}
+
+.logo-img {
+	color: white;
+	height: 30px;
+	width: 30px;
+	
+	&:hover {
+		color: white;		
+	}
+}
+
+
+

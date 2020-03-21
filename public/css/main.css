@@ -1,0 +1,53 @@
+/* Scss Document */
+/*Main stylings for all pages*/
+/*Color variables*/
+/*Font stack*/
+/*Footer styling*/
+@media screen and (min-width: 540px) {
+  .bottom-row {
+    margin-left: -70px;
+  }
+}
+.footer-position {
+  position: fixed;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 5%;
+  padding-top: 10px;
+  background-color: #380072;
+}
+
+.top-row {
+  text-align: center;
+}
+
+.footer-link {
+  font-family: "Roboto", sans-serif;
+  color: #FFF;
+}
+.footer-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo-img {
+  color: white;
+  height: 30px;
+  width: 30px;
+}
+.logo-img:hover {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */
